@@ -182,6 +182,7 @@ div#notebook {
 <li>The two datasets used are the data of all decks created on Hearthpwn and the data of all existing cards</li>
 <li>The main packages used are pandas(data structure), matplotlib(graphing tool) and sklearn(machine learning tool)</li>
 </ul>
+<p>Since Hearthstone is constantly coming out with new cards whilst balancing the rest, I am interested in how this would contribute to the meta of the game.</p>
 
 </div>
 </div>
@@ -974,6 +975,16 @@ gkFERESGY4JBREREhmOCQURERIb7Lxcq37u9INn4AAAAAElFTkSuQmCC
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Most of the decks cost less than 10000 to craft, but there are also "troll" decks that costs as much as 45000 dust to craft</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[204]:</div>
@@ -1724,7 +1735,8 @@ AJITgLkfn6pgAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c1">## rereading and cleaning data sets </span>
+<div class=" highlight hl-ipython2"><pre><span class="c1">## reloading and cleaning data sets </span>
+<span class="c1">## Dropping Travern Brawl decks since its decks and rules does not apply to the rest of the game</span>
 
 <span class="n">data_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;data.csv&#39;</span><span class="p">))</span>
 
@@ -2941,7 +2953,11 @@ vUFBjxBCiN6goEcIIURvUNAjhBCiN/4PrVjQkVY9D0cAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="--Naxx-Launch-introduced-more-low-cost-cards-into-decks">- Naxx Launch introduced more low cost cards into decks<a class="anchor-link" href="#--Naxx-Launch-introduced-more-low-cost-cards-into-decks">&#182;</a></h2>
+<ul>
+<li>Naxx Launch introduced more low cost cards into decks</li>
+<li>Gadgetzan also introduce some low cost cards, which led to early game decks such as mech mage and mech shaman</li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -4002,6 +4018,19 @@ BEbJlRBCCBHY/wHFjPNYAdJ24gAAAABJRU5ErkJggg==
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Naxx Launch led to an increase in Warlock decks because of cards like Voidcaller and Undertaker</li>
+<li>TGT Launch led to an increase in Paladin decks because of cards like Murloc knight and Mysterious Challenger</li>
+</ul>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -5986,159 +6015,31 @@ xAYAAAAASUVORK5CYII=
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre> 
-</pre></div>
-
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h3>
 </div>
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="KNN">KNN<a class="anchor-link" href="#KNN">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">dt_model</span> <span class="o">=</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">()</span>
-<span class="k">print</span> <span class="n">dt_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
-
-<span class="k">print</span> <span class="n">dt_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-</pre></div>
+<ul>
+<li>Across all Meta and releases, priest always shine.</li>
+<li>Mages are most affected by releases, ie increased decks</li>
+<li>Hutner decks never venture into control type decks, mainly low to mid.</li>
+<li>For every release, Blizzard made sure to release more low mana cost cards and less high mana cost cards</li>
+<li>Eventhough RandomForest Classifier produces 99.5% accuracy for testing set, training set only produce 79% accuracy</li>
+<li>Meaning, the model can correcly predict a deck's archetype ~80% of the time.</li>
+</ul>
 
 </div>
 </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>0.994784912116
-0.706515453319
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">dt_check</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">index</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">dt_check</span><span class="p">[</span><span class="s1">&#39;importance&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dt_model</span><span class="o">.</span><span class="n">feature_importances_</span>
-
-<span class="n">dt_check</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;importance&#39;</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
-<span class="n">dt_check</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[74]:</div>
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>importance</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>craft_cost</th>
-      <td>0.108204</td>
-    </tr>
-    <tr>
-      <th>DRAGON</th>
-      <td>0.069907</td>
-    </tr>
-    <tr>
-      <th>1.0</th>
-      <td>0.058511</td>
-    </tr>
-    <tr>
-      <th>10.0</th>
-      <td>0.058152</td>
-    </tr>
-    <tr>
-      <th>Normal</th>
-      <td>0.042299</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>50.0</th>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>ORC</th>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>dum_Beta Patch 4482</th>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>dum_Beta Patch 3937</th>
-      <td>0.000000</td>
-    </tr>
-    <tr>
-      <th>dum_Druid</th>
-      <td>0.000000</td>
-    </tr>
-  </tbody>
-</table>
-<p>65 rows × 1 columns</p>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
